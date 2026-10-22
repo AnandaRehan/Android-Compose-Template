@@ -61,7 +61,7 @@ jobs:
 
       - name: Generate Gradle Wrapper if missing
         run: |
-          gradle wrapper --gradle-version 8.7 || true
+          gradle wrapper --gradle-version 8.13 || true
 
       - name: Beri Izin Akses Gradle
         run: chmod +x gradlew
