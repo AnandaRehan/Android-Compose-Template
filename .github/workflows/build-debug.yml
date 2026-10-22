@@ -38,22 +38,6 @@ jobs:
       - name: Beri Izin Akses Gradle
         run: chmod +x gradlew || true
 
-      - name: Upload wrapp
-        uses: actions/upload-artifact@v6
-        with:
-          name: distri-wrapp
-          path: gradle/*
-          if-no-files-found: ignore
-          retention-days: 7
-
-      - name: Upload wrapp 2
-        uses: actions/upload-artifact@v6
-        with:
-          name: distri-wrapp2
-          path: gradle/wrapper/*
-          if-no-files-found: ignore
-          retention-days: 7
-
       - name: Run Unit Tests & Capture Screenshots
         run: |
           ./gradlew recordRoborazziDebug testDebugUnitTest --no-daemon --stacktrace || echo "Tests or screenshot recording completed"
